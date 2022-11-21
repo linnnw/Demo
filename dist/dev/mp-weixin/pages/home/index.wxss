@@ -44,12 +44,12 @@
   margin: 20rpx;
   color: #017782;
 }
-.category-box.data-v-2c5296db {
-  padding: 20rpx;
-}
-.category-box .title.data-v-2c5296db {
+.title.data-v-2c5296db {
   font-weight: 600;
   font-size: 32rpx;
+}
+.category-box.data-v-2c5296db {
+  padding: 20rpx;
 }
 .category-box .category.data-v-2c5296db {
   display: flex;
@@ -95,4 +95,49 @@
   width: 300rpx;
   margin-right: 20rpx;
   display: inline-block;
+}
+.brand.data-v-2c5296db {
+  padding: 40rpx 20rpx;
+}
+.brand .brand-box.data-v-2c5296db {
+  margin-top: 40rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.brand .brand-box .brand-item.data-v-2c5296db {
+  padding: 15rpx;
+  border: 2rpx solid #f4f4f4;
+  margin-right: 15rpx;
+  margin-bottom: 15rpx;
+  font-weight: 600;
+}
+.Newfeed.data-v-2c5296db {
+  padding: 20rpx;
+}
+.Newfeed .Newfeed-box.data-v-2c5296db {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60rpx;
+}
+.Newfeed .Newfeed-box .item.data-v-2c5296db {
+  width: 345rpx;
+  margin-bottom: 30rpx;
+}
+.Newfeed .Newfeed-box .item.data-v-2c5296db:nth-child(2n-1) {
+  margin-right: 20rpx;
+}
+.Newfeed .Newfeed-box .item .shop-title.data-v-2c5296db {
+  display: flex;
+  padding: 10rpx;
+  align-items: center;
+}
+.Newfeed .Newfeed-box .item .shop-title .shop-img.data-v-2c5296db {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+.Newfeed .Newfeed-box .item .shop-title .shop-name.data-v-2c5296db {
+  color: #868686;
+  font-size: 24rpx;
 }

@@ -20,7 +20,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "index",
   setup(__props) {
     let keyword = common_vendor.ref("");
-    let categoryList = common_vendor.reactive([
+    const categoryList = common_vendor.reactive([
       [
         {
           img: "level",
@@ -50,6 +50,20 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         }
       ]
     ]);
+    const brandList = common_vendor.reactive([
+      "Maje",
+      "Bershka",
+      "Hollister",
+      "Gemo",
+      "Converse",
+      "Desigual",
+      "Reebos",
+      "Etam",
+      "Dior",
+      "Catimini",
+      "Comptoir des Cotonniers",
+      "Burberry"
+    ]);
     let list = [
       "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F15%2F86%2FJDhlT1e2Q8.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590051&t=975659e553245f673fc6b144bcea7864",
       "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.ntimg.cn%2Ffile%2F20200825%2F28843647_104610930000_2.jpg&refer=http%3A%2F%2Fpic.ntimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590088&t=40ff6d530e883a86d553dd008c92326b"
@@ -57,7 +71,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     let goodsInfo = [
       {
         userInfo: {
-          avatar: "1",
+          avatar: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F15%2F86%2FJDhlT1e2Q8.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590051&t=975659e553245f673fc6b144bcea7864",
           name: "acac"
         },
         price: "10.00",
@@ -67,7 +81,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       },
       {
         userInfo: {
-          avatar: "1",
+          avatar: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F15%2F86%2FJDhlT1e2Q8.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590051&t=975659e553245f673fc6b144bcea7864",
           name: "acac"
         },
         price: "6.50",
@@ -77,7 +91,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       },
       {
         userInfo: {
-          avatar: "1",
+          avatar: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F15%2F86%2FJDhlT1e2Q8.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590051&t=975659e553245f673fc6b144bcea7864",
           name: "acac"
         },
         price: "15.00",
@@ -87,7 +101,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       },
       {
         userInfo: {
-          avatar: "1",
+          avatar: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F15%2F86%2FJDhlT1e2Q8.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590051&t=975659e553245f673fc6b144bcea7864",
           name: "acac"
         },
         price: "12.50",
@@ -97,7 +111,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       },
       {
         userInfo: {
-          avatar: "1",
+          avatar: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F15%2F86%2FJDhlT1e2Q8.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590051&t=975659e553245f673fc6b144bcea7864",
           name: "acac"
         },
         price: "11.60",
@@ -120,7 +134,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         d: common_vendor.p({
           type: "primary"
         }),
-        e: common_vendor.f(common_vendor.unref(categoryList), (item, index, i0) => {
+        e: common_vendor.f(categoryList, (item, index, i0) => {
           return {
             a: common_vendor.f(item, (iitem, index2, i1) => {
               return {
@@ -144,6 +158,34 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
               shop: item
             }),
             c: item.img
+          };
+        }),
+        g: common_vendor.f(brandList, (item, k0, i0) => {
+          return {
+            a: common_vendor.t(item)
+          };
+        }),
+        h: common_vendor.f(common_vendor.unref(goodsInfo), (item, k0, i0) => {
+          return {
+            a: common_vendor.w(({
+              userInfo
+            }, s1, i1) => {
+              return {
+                a: userInfo.avatar,
+                b: common_vendor.t(userInfo.name),
+                c: i1,
+                d: s1
+              };
+            }, {
+              name: "title",
+              path: "h[" + i0 + "].a",
+              vueId: "2c5296db-5-" + i0
+            }),
+            b: "2c5296db-5-" + i0,
+            c: common_vendor.p({
+              shop: item
+            }),
+            d: item.img
           };
         })
       };

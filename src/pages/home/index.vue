@@ -43,20 +43,29 @@
       <view class="commodity-box">
         <view class="item" v-for="item in goodsInfo" :key="item.img">
           <Shop :shop="item"></Shop>
-          <!-- <img class="img" :src="item.img" alt="" />
-          <view class="info">
-            <view>
-              <text>￡{{ item.price }}</text
-              ><u-icon
-                style="margin-left: 20rpx"
-                size="32"
-                color="#a9a9a9"
-                name="info-circle"
-              ></u-icon>
-            </view>
-            <view> {{ item.spec }} </view>
-            <view>{{ item.brand }}</view>
-          </view> -->
+        </view>
+      </view>
+    </view>
+
+    <view class="brand">
+      <view class="title">Shop by brand</view>
+      <view class="brand-box">
+        <view class="brand-item" v-for="item in brandList">{{ item }}</view>
+      </view>
+    </view>
+
+    <view class="Newfeed">
+      <view class="title">Newfeed</view>
+      <view class="Newfeed-box">
+        <view class="item" v-for="item in goodsInfo" :key="item.img">
+          <Shop :shop="item">
+            <template #title="{ userInfo }">
+              <view class="shop-title">
+                <img class="shop-img" :src="userInfo.avatar" alt="" />
+                <view class="shop-name">{{ userInfo.name }}</view>
+              </view>
+            </template>
+          </Shop>
         </view>
       </view>
     </view>
@@ -77,7 +86,7 @@ import { ref, reactive } from 'vue'
 //   })
 // })
 let keyword = ref('')
-let categoryList = reactive([
+const categoryList = reactive([
   [
     {
       img: 'level',
@@ -107,6 +116,20 @@ let categoryList = reactive([
     }
   ]
 ])
+const brandList = reactive([
+  'Maje',
+  'Bershka',
+  'Hollister',
+  'Gemo',
+  'Converse',
+  'Desigual',
+  'Reebos',
+  'Etam',
+  'Dior',
+  'Catimini',
+  'Comptoir des Cotonniers',
+  'Burberry'
+])
 let list = [
   'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F15%2F86%2FJDhlT1e2Q8.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590051&t=975659e553245f673fc6b144bcea7864',
   'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.ntimg.cn%2Ffile%2F20200825%2F28843647_104610930000_2.jpg&refer=http%3A%2F%2Fpic.ntimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590088&t=40ff6d530e883a86d553dd008c92326b'
@@ -115,7 +138,8 @@ let list = [
 let goodsInfo = [
   {
     userInfo: {
-      avatar: '1',
+      avatar:
+        'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F15%2F86%2FJDhlT1e2Q8.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590051&t=975659e553245f673fc6b144bcea7864',
       name: 'acac'
     },
     price: '10.00',
@@ -125,7 +149,8 @@ let goodsInfo = [
   },
   {
     userInfo: {
-      avatar: '1',
+      avatar:
+        'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F15%2F86%2FJDhlT1e2Q8.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590051&t=975659e553245f673fc6b144bcea7864',
       name: 'acac'
     },
     price: '6.50',
@@ -135,7 +160,8 @@ let goodsInfo = [
   },
   {
     userInfo: {
-      avatar: '1',
+      avatar:
+        'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F15%2F86%2FJDhlT1e2Q8.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590051&t=975659e553245f673fc6b144bcea7864',
       name: 'acac'
     },
     price: '15.00',
@@ -145,7 +171,8 @@ let goodsInfo = [
   },
   {
     userInfo: {
-      avatar: '1',
+      avatar:
+        'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F15%2F86%2FJDhlT1e2Q8.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590051&t=975659e553245f673fc6b144bcea7864',
       name: 'acac'
     },
     price: '12.50',
@@ -155,7 +182,8 @@ let goodsInfo = [
   },
   {
     userInfo: {
-      avatar: '1',
+      avatar:
+        'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F15%2F86%2FJDhlT1e2Q8.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1670590051&t=975659e553245f673fc6b144bcea7864',
       name: 'acac'
     },
     price: '11.60',
@@ -188,12 +216,13 @@ let goodsInfo = [
     color: $u-type-primary;
   }
 }
+.title {
+  font-weight: 600;
+  font-size: 32rpx;
+}
 .category-box {
   padding: 20rpx;
-  .title {
-    font-weight: 600;
-    font-size: 32rpx;
-  }
+
   .category {
     display: flex;
     flex-wrap: wrap;
@@ -244,6 +273,54 @@ let goodsInfo = [
       width: 300rpx;
       margin-right: 20rpx;
       display: inline-block;
+    }
+  }
+}
+
+.brand {
+  padding: 40rpx 20rpx;
+  .brand-box {
+    margin-top: 40rpx;
+    display: flex;
+    flex-wrap: wrap;
+    .brand-item {
+      padding: 15rpx;
+      border: 2rpx solid #f4f4f4;
+      margin-right: 15rpx;
+      margin-bottom: 15rpx;
+      font-weight: 600;
+    }
+  }
+}
+
+.Newfeed {
+  padding: 20rpx;
+  .Newfeed-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60rpx;
+    .item {
+      width: 345rpx;
+      margin-bottom: 30rpx;
+      &:nth-child(2n - 1) {
+        margin-right: 20rpx;
+      }
+
+      .shop-title {
+        display: flex;
+        padding: 10rpx;
+        align-items: center;
+        .shop-img {
+          width: 40rpx;
+          height: 40rpx;
+          border-radius: 50%;
+          margin-right: 15rpx;
+        }
+        .shop-name {
+          color: #868686;
+          font-size: 24rpx;
+        }
+      }
     }
   }
 }

@@ -50,10 +50,10 @@ const props = withDefaults(defineProps<propsType>(), {
 
 <style lang="scss" scoped>
 .item {
-  width: 300rpx;
+  width: 100%;
   display: inline-block;
   .img {
-    width: 300rpx;
+    width: 100%;
     height: 500rpx;
   }
 }
